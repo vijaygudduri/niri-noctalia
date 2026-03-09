@@ -319,6 +319,10 @@ cursor {
     xcursor-size 24
 }
 
+environment {
+    QT_QPA_PLATFORMTHEME "gtk3"
+}
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
