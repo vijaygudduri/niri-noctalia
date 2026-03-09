@@ -1,9 +1,9 @@
 ***Follow this after a fresh OS installation without any DE (This is tested only on CachyOS)***
 
-1.  **Install niri, sddm, chrome and kitty**
+1.  **Install niri, sddm, chrome and alacritty**
 
       ```bash
-      sudo pacman -S niri sddm kitty ; sudo systemctl enable sddm
+      sudo pacman -S niri sddm alacritty ; sudo systemctl enable sddm
       ```
 
 2.  **Install necessaries**
