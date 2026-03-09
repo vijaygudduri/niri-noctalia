@@ -13,7 +13,7 @@
       ```
 
       ```bash
-      paru -S --needed --noconfirm sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin
+      paru -S --needed --noconfirm sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin libinput-gestures
       ```
 
 4.  **Clone the dotfiles repo**
@@ -39,6 +39,13 @@
       ```
 
 7.  **Apply themes from nwg-look (theme is 'catppuccin mocha' and cursor theme is 'bibata modern ice')**
+
+8.  **Configure libinput-gestures for touchpad gestures**
+
+      ```bash
+      sudo usermod -aG input $USER
+      newgrp input  # reboot needed for the config to take effect
+      ```
 
 8.  **To apply sugar-candy theme on sddm, run below commands**
 
