@@ -329,6 +329,7 @@ environment {
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
+
 window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
@@ -369,6 +370,40 @@ window-rule {
 window-rule {
     open-maximized true
 }
+
+//  Pavucontrol floating
+window-rule {
+    match app-id="org.pulseaudio.pavucontrol"
+    open-floating true
+    default-window-height { fixed 600; }
+    default-column-width { fixed 600; }
+}
+
+//  Blueman Manager floating
+window-rule {
+    match app-id="blueman-manager"
+    open-floating true
+    default-window-height { fixed 700; }
+    default-column-width { fixed 700; }
+}
+
+//  GNOME Calculator floating
+window-rule {
+    match app-id="org.gnome.Calculator"
+    open-floating true
+    default-window-height { fixed 600; }
+    default-column-width { fixed 600; }
+}
+
+//  Network Manager editor floating
+window-rule {
+    match app-id="nm-connection-editor"
+    open-floating true
+    default-window-height { fixed 700; }
+    default-column-width { fixed 700; }
+}
+
+// binds
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -650,3 +685,5 @@ binds {
     Mod+E { spawn "nautilus"; }
 
 }
+
+include "./noctalia.kdl"
