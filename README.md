@@ -65,7 +65,7 @@
       EOF"
       ```
 
-10.  **To decrease boot order timeout prompt of systemd while rebooting, switch to root and change timeout to 2 (or 0 to disable completly) in /boot/loader/loader.conf**
+10.  **To decrease boot order timeout prompt of systemd while rebooting, switch to root and change timeout to 2 (or 0 to disable completly) in /boot/limine.conf**
 
 11.  **Change to cloudflare dns, replace 'Interstellar' with your connection name**
 
