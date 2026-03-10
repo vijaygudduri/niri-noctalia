@@ -403,6 +403,14 @@ window-rule {
     default-column-width { fixed 700; }
 }
 
+//  Noctalia settings floating
+window-rule {
+    match app-id="dev.noctalia.noctalia-qs" title="Noctalia"
+    open-floating true
+    default-window-height { fixed 700; }
+    default-column-width { fixed 700; }
+}
+
 // SMplayer file chooser
 window-rule {
     match app-id="Smplayer" title="Choose a file"
