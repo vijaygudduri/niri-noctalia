@@ -685,5 +685,3 @@ binds {
     Mod+E { spawn "nautilus"; }
 
 }
-
-include "./noctalia.kdl"
