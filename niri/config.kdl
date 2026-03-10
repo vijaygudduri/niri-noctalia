@@ -111,7 +111,7 @@ input {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 5
+    gaps 4
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -362,7 +362,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 8
     clip-to-geometry true
 }
 
@@ -401,6 +401,14 @@ window-rule {
     open-floating true
     default-window-height { fixed 700; }
     default-column-width { fixed 700; }
+}
+
+// SMplayer file chooser
+window-rule {
+    match app-id="Smplayer" title="Choose a file"
+    // default-floating true
+    default-column-width { fixed 930; }
+    default-window-height { fixed 600; }
 }
 
 // binds
