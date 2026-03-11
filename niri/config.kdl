@@ -320,7 +320,9 @@ cursor {
 }
 
 environment {
-    QT_QPA_PLATFORMTHEME "gtk3"
+  XDG_CURRENT_DESKTOP "niri"
+  QT_QPA_PLATFORMTHEME "gtk3"
+  QT_QPA_PLATFORMTHEME_QT6 "gtk3"
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -362,7 +364,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 5
     clip-to-geometry true
 }
 
