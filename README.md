@@ -9,7 +9,7 @@
 2.  **Install necessaries**
 
       ```bash      
-      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look polkit-gnome gnome-keyring wl-clipboard starship network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus transmission-gtk smplayer swappy evince brightnessctl playerctl wlsunset cachyos-kernel-manager
+      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look polkit-gnome gnome-keyring wl-clipboard starship network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus transmission-gtk smplayer swappy evince brightnessctl playerctl wlsunset xdg-desktop-portal-gnome
       ```
 
       ```bash
