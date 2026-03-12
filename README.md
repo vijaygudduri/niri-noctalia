@@ -43,8 +43,7 @@
 8.  **Configure libinput-gestures for touchpad gestures**
 
       ```bash
-      sudo usermod -aG input $USER
-      newgrp input  # reboot needed for the config to take effect
+      sudo gpasswd -a $USER input #reboot needed for the config to take effect
       ```
 
 8.  **To apply sugar-candy theme on sddm, run below commands**
