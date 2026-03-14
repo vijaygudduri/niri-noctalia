@@ -29,13 +29,19 @@
       ```
       
       ```bash
-      cp -r wallpapers ~/ && cp -r fastfetch niri kitty nwg-drawer chrome-flags.conf ~/.config/
+      cp -r wallpapers ~/ && cp -r fastfetch niri kitty nwg-drawer chrome-flags.conf libinput-gestures.conf battery-notify.py ~/.config/
       ```
 
 6.  **Install noctalia-shell**
 
       ```bash
       sudo pacman -S noctalia-shell
+      ```
+
+7.  **Execute the scripts**
+
+      ```bash
+      chmod +x ~/.config/battery-notify.py ~/.config/fastfetch/fastfetch-logo.sh
       ```
 
 7.  **Apply themes from nwg-look (theme is 'catppuccin mocha' and cursor theme is 'bibata modern ice')**
