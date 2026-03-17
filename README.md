@@ -87,7 +87,18 @@
 12.  **Add starship config and modify ls alias in fish**
 
       ```bash
-      echo -e "\n\nalias ls='eza --color=always --group-directories-first --icons'\n\nstarship init fish | source" >> ~/.config/fish/config.fish
+      echo -e "
+      alias ls='eza --color=always --group-directories-first --icons'
+      
+      starship init fish | source
+      
+      function waterone
+          builtin history delete --exact --case-sensitive \"waterone\"
+          command waterfox -P \"mypro\" --no-remote \$argv &
+          disown
+          sleep 1
+          kitty @ close-window
+      end" >> ~/.config/fish/config.fish
       ```
 
 
