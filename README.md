@@ -94,7 +94,7 @@
       
       function waterone
           builtin history delete --exact --case-sensitive \"waterone\"
-          command waterfox -P \"mypro\" --no-remote \$argv &
+          command waterfox -P \"profile-2\" --no-remote \$argv &
           disown
           sleep 1
           kitty @ close-window
