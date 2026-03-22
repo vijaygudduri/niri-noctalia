@@ -273,6 +273,10 @@ spawn-at-startup "libinput-gestures-setup" "restart"
 
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
+spawn-at-startup "/home/vijay/.config/scripts/battery-notify.py"
+
+spawn-at-startup "/home/vijay/.config/scripts/usb-notify.py"
+
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
 
