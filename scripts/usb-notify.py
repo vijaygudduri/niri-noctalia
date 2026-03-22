@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import pyudev
 import time
 import threading
