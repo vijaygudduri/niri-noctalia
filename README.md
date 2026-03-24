@@ -19,7 +19,7 @@
 4.  **Clone the dotfiles repo**
 
       ```bash
-      git clone --depth=1 git@github.com:vijaygudduri/niri-noctalia.git
+      git clone --depth=1 https://github.com/vijaygudduri/niri-noctalia.git
       ```
 
 5.  **Copy the configs from cloned repo to ~/.config**
