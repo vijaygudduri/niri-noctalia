@@ -47,7 +47,7 @@
 7.  **Download Candy icon theme & extract it to ~/.icons and Apply themes from nwg-look**
 
       ```bash
-      https://www.gnome-look.org/p/1305251/
+      [Candy Icons](https://www.gnome-look.org/p/1305251/)
       ```
       
       ```bash
