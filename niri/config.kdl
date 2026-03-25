@@ -111,7 +111,9 @@ input {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 4
+    gaps 5
+
+    empty-workspace-above-first
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -159,7 +161,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 2
+        width 3
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -198,7 +200,7 @@ layout {
         off
 
         width 4
-        active-color "#ffc87f"
+        active-color "#7fc8ff"
         inactive-color "#505050"
 
         // Color of the border around windows that request your attention.
@@ -257,7 +259,7 @@ layout {
     struts {
         // left 64
         // right 64
-        // top 64
+        top -2
         // bottom 64
     }
 }
@@ -329,6 +331,13 @@ environment {
   QT_QPA_PLATFORMTHEME_QT6 "gtk3"
 }
 
+// Disable the hot corners.
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
@@ -353,6 +362,29 @@ window-rule {
     open-floating true
 }
 
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    border {
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -368,7 +400,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 5
+    geometry-corner-radius 8 8 0 0
     clip-to-geometry true
     open-maximized true     // Set open-maximized to true for all windows
 }
@@ -673,8 +705,13 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Mod+P { screenshot; }
-    Mod+Shift+P { screenshot-screen; }
+
+    // The pointer will be hidden by default
+    // (you can still show it by pressing P).
+    Print { screenshot show-pointer=false; }
+
+    // The pointer will be hidden on the screenshot.
+    Ctrl+Print { screenshot-screen show-pointer=false; }
     Alt+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
@@ -688,9 +725,9 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+M { quit; }
-    Mod+Shift+E { quit; }
-    Ctrl+Alt+Delete { quit; }
+    Mod+M { quit skip-confirmation=true; }
+    Mod+Shift+E { quit skip-confirmation=true; }
+    Ctrl+Alt+Delete { quit skip-confirmation=true; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
