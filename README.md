@@ -9,7 +9,7 @@
 2.  **Install necessaries**
 
       ```bash      
-      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look polkit-gnome gnome-keyring wl-clipboard starship gnome-calculator gnome-text-editor gnome-clocks blueman nautilus swappy evince brightnessctl playerctl wlsunset xdg-desktop-portal-gnome xwayland-satellite python-dbus-next
+      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look polkit-gnome gnome-keyring wl-clipboard starship gnome-calculator gnome-text-editor gnome-clocks blueman nautilus swappy evince brightnessctl playerctl wlsunset xdg-desktop-portal-gnome xwayland-satellite python-dbus-next noctalia-shell
       ```
 
       ```bash
@@ -32,24 +32,26 @@
       cp -r wallpapers ~/ && cp -r fastfetch niri kitty nwg-drawer scripts chrome-flags.conf libinput-gestures.conf ~/.config/
       ```
 
-6.  **Install noctalia-shell**
-
-      ```bash
-      sudo pacman -S noctalia-shell
-      ```
-
 7.  **Execute the scripts**
 
       ```bash
       chmod +x ~/.config/scripts/*
       ```
 
-7.  **Apply themes from nwg-look (theme is 'catppuccin mocha' and cursor theme is 'bibata modern ice')**
-
-8.  **Configure libinput-gestures for touchpad gestures**
+9.  **Configure libinput-gestures for touchpad gestures**
 
       ```bash
       sudo gpasswd -a $USER input #reboot needed for the config to take effect
+      ```
+
+7.  **Download Candy icon theme & extract it to ~/.icons and Apply themes from nwg-look**
+
+      ```bash
+      https://www.gnome-look.org/p/1305251/
+      ```
+      
+      ```bash
+      mkdir -p ~/.icons && tar -xJf ~/Downloads/candy-icons.tar.xz -C ~/.icons
       ```
 
 8.  **To apply sugar-candy theme on sddm, run below commands**
@@ -70,7 +72,7 @@
       EOF"
       ```
 
-10.  **To decrease boot order timeout prompt of systemd while rebooting, switch to root and change timeout to 2 (or 0 to disable completly) in /boot/limine.conf**
+10.  **To decrease boot order timeout prompt of limine while rebooting, switch to root and change timeout to 2 (or 0 to disable completly) in /boot/limine.conf**
 
 11.  **Change to cloudflare dns, replace 'Interstellar' with your connection name**
 
