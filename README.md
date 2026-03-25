@@ -29,7 +29,7 @@
       ```
       
       ```bash
-      cp -r wallpapers ~/ && cp -r fastfetch niri kitty nwg-drawer scripts chrome-flags.conf libinput-gestures.conf ~/.config/
+      cp -r Wallpapers ~/Pictures/ && cp -r fastfetch niri kitty nwg-drawer scripts chrome-flags.conf libinput-gestures.conf ~/.config/
       ```
 
 7.  **Execute the scripts**
