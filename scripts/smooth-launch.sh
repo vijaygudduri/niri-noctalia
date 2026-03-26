@@ -10,9 +10,6 @@ case "$1" in
     google-chrome-stable|*chrome*)
         delay=2000
         ;;
-    nautilus)
-        delay=200
-        ;;
 esac
 
 # Transition
