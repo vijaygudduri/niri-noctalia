@@ -94,9 +94,9 @@
       
       function waterone
           builtin history delete --exact --case-sensitive \"waterone\"
-          command waterfox -P \"profile-2\" --no-remote \$argv &
+          command net.waterfox.waterfox -P \"profile-2\" --no-remote \$argv &
           disown
-          sleep 1
+          niri msg action do-screen-transition --delay-ms 2500
           kitty @ close-window
       end" >> ~/.config/fish/config.fish
       ```
