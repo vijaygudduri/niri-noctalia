@@ -31,7 +31,7 @@ input {
     touchpad {
         // off
         tap
-        // dwt
+        dwt
         // dwtp
         // drag false
         // drag-lock
@@ -328,7 +328,7 @@ cursor {
 environment {
   XDG_CURRENT_DESKTOP "niri"
   QT_QPA_PLATFORMTHEME "gtk3"
-  QT_QPA_PLATFORMTHEME_QT6 "gtk3"
+//   QT_QPA_PLATFORMTHEME_QT6 "gtk3"
 }
 
 // Disable the hot corners.
@@ -695,7 +695,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+W { toggle-column-tabbed-display; }
+    // Mod+W { toggle-column-tabbed-display; }
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have
@@ -734,7 +734,7 @@ binds {
     // Mod+Shift+P { power-off-monitors; }
 
     Mod+C { spawn "code"; }
-    Mod+X { spawn "google-chrome-stable"; }
     Mod+E { spawn "nautilus"; }
-
+    Mod+X { spawn "~/.config/scripts/smooth-launch.sh" "google-chrome-stable"; }
+    Mod+W { spawn "~/.config/scripts/smooth-launch.sh" "net.waterfox.waterfox"; }
 }
