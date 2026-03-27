@@ -30,12 +30,6 @@
       "keyColor": "green"
     },
     {
-      "type": "display",
-      "key": "  󰍹 Display",
-      "format": "{1}x{2} @ {3}Hz [{7}]",
-      "keyColor": "green"
-    },
-    {
       "type": "terminal",
       "key": "   Terminal",
       "keyColor": "yellow"
@@ -45,6 +39,14 @@
       "key": "  󱗃 WM",
       "format": "{2} {5}",
       "keyColor": "yellow"
+    },
+    {
+      "type": "command",
+      "key": "  󱗈 UI",
+      "keyColor": "yellow",
+      "shell": "/bin/sh",
+      "lazy": false,
+      "text": "ver=$(/usr/bin/qs -c noctalia-shell ipc call state all | jq -r .state.changelogState.lastSeenVersion | sed 's/^v//'); echo \"Noctalia-shell $ver\""
     },
     {
       "type": "custom",
