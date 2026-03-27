@@ -89,6 +89,8 @@
       ```bash
       echo -e "
       alias ls='eza --color=always --group-directories-first --icons'
+
+      alias top='clear && command top'
       
       starship init fish | source
       
