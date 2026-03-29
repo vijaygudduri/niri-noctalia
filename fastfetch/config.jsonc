@@ -25,16 +25,6 @@
       "keyColor": "red"
     },
     {
-      "type": "packages",
-      "key": "  󰏗 Packages",
-      "keyColor": "green"
-    },
-    {
-      "type": "terminal",
-      "key": "   Terminal",
-      "keyColor": "yellow"
-    },
-    {
       "type": "wm",
       "key": "  󱗃 WM",
       "format": "{2} {5}",
@@ -47,6 +37,16 @@
       "shell": "/bin/sh",
       "lazy": false,
       "text": "ver=$(/usr/bin/qs -c noctalia-shell ipc call state all | jq -r .state.changelogState.lastSeenVersion | sed 's/^v//'); echo \"Noctalia-shell $ver\""
+    },
+    {
+      "type": "packages",
+      "key": "  󰏗 Packages",
+      "keyColor": "green"
+    },
+    {
+      "type": "terminal",
+      "key": "   Terminal",
+      "keyColor": "yellow"
     },
     {
       "type": "custom",
