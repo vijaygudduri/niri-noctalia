@@ -57,16 +57,14 @@
       "format": "┌──────────────────────────────────────────┐"
     },
     {
-      "type": "cpu",
-      "format": "{1} @ {7}",
-      "key": "   CPU",
-      "keyColor": "blue"
+      "type": "terminal",
+      "key": "   Terminal",
+      "keyColor": "yellow"
     },
     {
-      "type": "gpu",
-      "format": "{1} {2}",
-      "key": "  󰊴 GPU",
-      "keyColor": "blue"
+      "type": "shell",
+      "key": "   Shell",
+      "keyColor": "yellow"
     },
     {
       "type": "memory",
