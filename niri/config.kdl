@@ -275,9 +275,11 @@ spawn-at-startup "libinput-gestures-setup" "restart"
 
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
-spawn-at-startup "/home/vijay/.config/scripts/battery-notify.py"
+// spawn-at-startup "/home/vijay/.config/scripts/battery-notify.py"
 
 spawn-at-startup "/home/vijay/.config/scripts/usb-notify.py"
+
+spawn-at-startup "wl-clip-persist" "--clipboard" "both"
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
@@ -733,8 +735,9 @@ binds {
     // moving the mouse or pressing any other key.
     // Mod+Shift+P { power-off-monitors; }
 
-    Mod+C { spawn "code"; }
-    Mod+E { spawn "nautilus"; }
-    Mod+X { spawn "~/.config/scripts/smooth-launch.sh" "google-chrome-stable"; }
-    Mod+W { spawn "~/.config/scripts/smooth-launch.sh" "net.waterfox.waterfox"; }
+    Mod+C repeat=false { spawn "code"; }
+    Mod+E repeat=false { spawn "nautilus"; }
+    Mod+X repeat=false { spawn "~/.config/scripts/smooth-launch.sh" "google-chrome-stable"; }
+    // Mod+W { spawn "~/.config/scripts/smooth-launch.sh" "net.waterfox.waterfox"; }
+    Mod+W repeat=false { spawn "net.waterfox.waterfox"; }
 }

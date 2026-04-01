@@ -9,11 +9,11 @@
 2.  **Install necessaries**
 
       ```bash      
-      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look polkit-gnome gnome-keyring wl-clipboard starship gnome-calculator gnome-text-editor gnome-clocks blueman nautilus swappy evince brightnessctl playerctl wlsunset xdg-desktop-portal-gnome xwayland-satellite python-dbus-next noctalia-shell
+      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look polkit-gnome gnome-keyring wl-clipboard starship gnome-calculator gnome-text-editor gnome-clocks blueman nautilus swappy evince brightnessctl playerctl wlsunset xdg-desktop-portal-gnome xwayland-satellite python-dbus-next noctalia-shell jq wl-clip-persist
       ```
 
       ```bash
-      paru -S --needed --noconfirm sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin libinput-gestures simplenote-electron-bin
+      paru -S --needed --noconfirm sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin libinput-gestures
       ```
 
 4.  **Clone the dotfiles repo**
@@ -89,6 +89,8 @@
       ```bash
       echo -e "
       alias ls='eza --color=always --group-directories-first --icons'
+
+      alias top='clear && command top'
       
       starship init fish | source
       
@@ -96,7 +98,7 @@
           builtin history delete --exact --case-sensitive \"waterone\"
           command net.waterfox.waterfox -P \"profile-2\" --no-remote \$argv &
           disown
-          niri msg action do-screen-transition --delay-ms 2500
+          niri msg action do-screen-transition --delay-ms 3000
           kitty @ close-window
       end" >> ~/.config/fish/config.fish
       ```

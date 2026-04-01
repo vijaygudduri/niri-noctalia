@@ -5,10 +5,10 @@ delay=150
 
 case "$1" in
     net.waterfox.waterfox|*waterfox*)
-        delay=2500
+        delay=3000
         ;;
     google-chrome-stable|*chrome*)
-        delay=2000
+        delay=2500
         ;;
 esac
 
