@@ -452,6 +452,15 @@ window-rule {
     default-window-height { fixed 600; }
 }
 
+//  Noctalia settings floating
+window-rule {
+    match app-id="dev.noctalia.noctalia-qs" title="Noctalia"
+    open-floating true
+    default-window-height { fixed 800; }
+    default-column-width { fixed 1000; }
+}
+
+
 // binds
 
 binds {
