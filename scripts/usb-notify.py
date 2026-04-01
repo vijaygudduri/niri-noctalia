@@ -23,7 +23,7 @@ COOLDOWN = 1.5
 
 # How long to wait for a block device to appear before declaring "not ready" (in seconds)
 # Only reached if no block device event arrives — normal pendrives resolve in ~100-500ms
-NOT_READY_TIMEOUT = 4.0
+NOT_READY_TIMEOUT = 5.0
 
 # Stores sys_path -> (full_name, icon) for connected devices
 # Used at disconnect time when udev properties may no longer be available
@@ -96,8 +96,17 @@ def on_usb_add(device):
     # Determine icon at connect time while all udev properties are still available.
     # Stored in device_memory so disconnect notification uses the correct icon
     # (udev properties may be gone by the time the remove event fires).
-    icon = 'input-mouse' if is_hid_device(device) else 'drive-removable-media'
-    device_memory[sys_path] = (full_name, icon)
+    #
+    # FIX: Only store on first seen — never overwrite an existing entry.
+    # USB autosuspend/resume causes the kernel to re-enumerate the device and
+    # fire a duplicate 'add' event after 5-10 mins of inactivity. At that brief
+    # wake moment, ID_USB_INTERFACES may not yet be populated in the udev database,
+    # causing is_hid_device() to return False and clobbering the correct icon.
+    if sys_path not in device_memory:
+        icon = 'input-mouse' if is_hid_device(device) else 'drive-removable-media'
+        device_memory[sys_path] = (full_name, icon)
+
+    _, icon = device_memory[sys_path]
 
     if is_hid_device(device):
         # HID devices (mouse, keyboard) don't create block devices — notify immediately
