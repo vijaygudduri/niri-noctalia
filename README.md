@@ -13,7 +13,7 @@
       ```
 
       ```bash
-      paru -S --needed --noconfirm sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin libinput-gestures simplenote-electron-bin
+      paru -S --needed --noconfirm sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin libinput-gestures
       ```
 
 4.  **Clone the dotfiles repo**
