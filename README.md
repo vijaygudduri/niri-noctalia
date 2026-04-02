@@ -1,4 +1,4 @@
-<img width="1389" height="368" alt="image" src="https://github.com/user-attachments/assets/6eff3bdc-dafe-4aa0-86cd-959166d28391" />***Follow this after a fresh OS installation without any DE (This is tested only on CachyOS)***
+***Follow this after a fresh OS installation without any DE (This is tested only on CachyOS)***
 
 1.  **Install niri, sddm, chrome and alacritty**
 
