@@ -412,52 +412,16 @@ debug {
   honor-xdg-activation-with-invalid-serial
 }
 
-//  Pavucontrol floating
+//  floating apps
 window-rule {
     match app-id="org.pulseaudio.pavucontrol"
-    open-floating true
-    default-window-height { fixed 600; }
-    default-column-width { fixed 600; }
-}
-
-//  Blueman Manager floating
-window-rule {
     match app-id="blueman-manager"
-    open-floating true
-    default-window-height { fixed 700; }
-    default-column-width { fixed 700; }
-}
-
-//  GNOME Calculator floating
-window-rule {
     match app-id="org.gnome.Calculator"
-    open-floating true
-    default-window-height { fixed 600; }
-    default-column-width { fixed 600; }
-}
-
-//  Network Manager editor floating
-window-rule {
     match app-id="nm-connection-editor"
-    open-floating true
-    default-window-height { fixed 700; }
-    default-column-width { fixed 700; }
-}
-
-// SMplayer file chooser
-window-rule {
-    match app-id="Smplayer" title="Choose a file"
-    // default-floating true
-    default-column-width { fixed 930; }
-    default-window-height { fixed 600; }
-}
-
-//  Noctalia settings floating
-window-rule {
     match app-id="dev.noctalia.noctalia-qs" title="Noctalia"
     open-floating true
-    default-window-height { fixed 800; }
-    default-column-width { fixed 1000; }
+    default-column-width { proportion 0.50; }
+    default-window-height { proportion 0.50; }
 }
 
 
