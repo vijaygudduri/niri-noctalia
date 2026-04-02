@@ -1,4 +1,4 @@
-***Follow this after a fresh OS installation without any DE (This is tested only on CachyOS)***
+<img width="1389" height="368" alt="image" src="https://github.com/user-attachments/assets/6eff3bdc-dafe-4aa0-86cd-959166d28391" />***Follow this after a fresh OS installation without any DE (This is tested only on CachyOS)***
 
 1.  **Install niri, sddm, chrome and alacritty**
 
@@ -93,6 +93,12 @@
       alias top='clear && command top'
       
       starship init fish | source
+
+      function fish_greeting
+          if test "$TERM_PROGRAM" != "vscode"
+              fastfetch
+          end
+      end
       
       function waterone
           builtin history delete --exact --case-sensitive \"waterone\"
