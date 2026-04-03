@@ -9,7 +9,7 @@
 2.  **Install necessaries**
 
       ```bash      
-      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look polkit-gnome gnome-keyring wl-clipboard wl-clip-persist starship gnome-calculator gnome-text-editor gnome-clocks blueman nautilus swappy evince brightnessctl playerctl wlsunset xdg-desktop-portal-gnome xwayland-satellite python-dbus-next noctalia-shell jq
+      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look polkit-gnome gnome-keyring wl-clipboard wl-clip-persist gnome-calculator gnome-text-editor gnome-clocks blueman nautilus swappy evince brightnessctl playerctl wlsunset xdg-desktop-portal-gnome xwayland-satellite python-dbus-next noctalia-shell jq
       ```
 
       ```bash
@@ -83,31 +83,39 @@
       
       nmcli con up 'Interstellar'
       ```
-
-12.  **Add starship config and modify ls alias in fish**
+12. **Change the shell to zsh**
 
       ```bash
-      echo -e "
-      
-      alias ls='eza --color=always --group-directories-first --icons'
+      chsh -s $(which zsh)
+      ```  
 
+13.  **Copy some custom configs to .zshrc**
+
+      ```bash
+      cat << 'EOF' | cat - ~/.zshrc > ~/.zshrc.tmp && mv ~/.zshrc.tmp ~/.zshrc
+      # Show fastfetch everywhere EXCEPT in VS Code
+      # Sending to /dev/tty prevents the P10K Instant Prompt warning
+      if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+        if command -v fastfetch >/dev/null; then
+          fastfetch > /dev/tty
+        fi
+      fi
+      
       alias top='clear && command top'
       
-      starship init fish | source
-
-      function fish_greeting
-          if test "$TERM_PROGRAM" != "vscode"
-              fastfetch
-          end
-      end
-      
-      function waterone
-          builtin history delete --exact --case-sensitive \"waterone\"
-          command net.waterfox.waterfox -P \"profile-2\" --no-remote \$argv &
+      waterone() {
+          net.waterfox.waterfox -P "profile-2" --no-remote "$@" &>/dev/null &
           disown
           niri msg action do-screen-transition --delay-ms 3000
-          kitty @ close-window
-      end" >> ~/.config/fish/config.fish
+          if [[ "$TERM" == "xterm-kitty" ]]; then
+              exec kitty @ close-window
+          else
+              exit
+          fi
+      }
+      alias waterone=' waterone'
+      
+      EOF
       ```
 
 
