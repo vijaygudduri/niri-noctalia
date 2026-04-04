@@ -29,7 +29,7 @@
       ```
       
       ```bash
-      cp -r Wallpapers ~/Pictures/ && cp -r fastfetch niri kitty nwg-drawer scripts chrome-flags.conf libinput-gestures.conf ~/.config/
+      cp -r Wallpapers ~/Pictures/ && cp .zshrc_myconfigs ~ && cp -r fastfetch niri kitty nwg-drawer scripts chrome-flags.conf libinput-gestures.conf ~/.config/
       ```
 
 7.  **Execute the scripts**
@@ -92,30 +92,7 @@
 13.  **Copy some custom configs to .zshrc**
 
       ```bash
-      cat << 'EOF' | cat - ~/.zshrc > ~/.zshrc.tmp && mv ~/.zshrc.tmp ~/.zshrc
-      # Show fastfetch everywhere EXCEPT in VS Code
-      # Sending to /dev/tty prevents the P10K Instant Prompt warning
-      if [[ "$TERM_PROGRAM" != "vscode" ]]; then
-        if command -v fastfetch >/dev/null; then
-          fastfetch > /dev/tty
-        fi
-      fi
-      
-      alias top='clear && command top'
-      
-      waterone() {
-          net.waterfox.waterfox -P "profile-2" --no-remote "$@" &>/dev/null &
-          disown
-          niri msg action do-screen-transition --delay-ms 3000
-          if [[ "$TERM" == "xterm-kitty" ]]; then
-              exec kitty @ close-window
-          else
-              exit
-          fi
-      }
-      alias waterone=' waterone'
-      
-      EOF
+      printf '# My custom configs\n[[ -f ~/.zshrc_myconfigs ]] && source ~/.zshrc_myconfigs\n\n' | cat - ~/.zshrc > ~/.zshrc.tmp && mv ~/.zshrc.tmp ~/.zshrc
       ```
 
 
