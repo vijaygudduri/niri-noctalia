@@ -13,7 +13,7 @@
       ```
 
       ```bash
-      paru -S --needed --noconfirm sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin libinput-gestures
+      paru -S --needed --noconfirm sddm-astronaut-theme catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin libinput-gestures
       ```
 
 4.  **Clone the dotfiles repo**
@@ -64,7 +64,7 @@
       Numlock=on
       
       [Theme]
-      Current=sugar-candy
+      Current=sddm-astronaut-theme
       CursorTheme=Bibata-Modern-Ice
       CursorSize=24
       EOF"
