@@ -48,7 +48,8 @@ NOTIFY_CRITICAL  = Notification("Battery Critically Low", "Battery at {}% — PL
 # Each entry fires once per discharge session when the battery hits that exact %.
 # Keys are the battery percentages that trigger the notification.
 DISCHARGING_THRESHOLDS: dict[int, Notification] = {
-    20: Notification("Battery Low", "Battery at 20% — Consider inserting the cord",          "battery-020-symbolic", "critical"),
+    25: Notification("Battery Low", "Battery at 25% — Consider inserting the cord",          "battery-030-symbolic", "critical"),
+    20: Notification("Battery Low", "Battery at 20% — Plug it please",                       "battery-020-symbolic", "critical"),
     15: Notification("Battery Low", "Battery at 15% — Low on juice, lets insert some power", "battery-020-symbolic", "critical"),
     10: Notification("Battery Low", "Battery at 10% — Critically low, dude insert it now",   "battery-010-symbolic", "critical"),
 }
@@ -58,7 +59,9 @@ DISCHARGING_THRESHOLDS: dict[int, Notification] = {
 # Only 90%, 95%, and 100% are included — lower thresholds (80%, 85%) are omitted
 # to avoid nagging the user too early while charging.
 CHARGING_THRESHOLDS: dict[int, Notification] = {
-     90: Notification("Battery Charged", "Battery at 90% - Enough power to last few hours",    "battery-090-charging-symbolic", "normal"),
+     80: Notification("Battery Charged", "Battery at 80% - Consider unplugging soon",          "battery-080-charging-symbolic", "normal"),
+     85: Notification("Battery Charged", "Battery at 85% - Please Unplug",                     "battery-080-charging-symbolic", "normal"),
+     90: Notification("Battery Charged", "Battery at 90% - Pull it out now",                   "battery-090-charging-symbolic", "normal"),
      95: Notification("Battery Charged", "Battery at 95% - Juice filled up, please remove it", "battery-090-charging-symbolic", "normal"),
     100: Notification("Battery Charged", "Battery fully charged - Pull Out Right Now",         "battery-100-charging-symbolic", "normal"),
 }
