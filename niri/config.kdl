@@ -414,7 +414,7 @@ window-rule {
     blur true
     // xray false
     }
-    opacity 0.85
+    opacity 0.90
     geometry-corner-radius 8 8 0 0
     clip-to-geometry true
     open-maximized true     // Set open-maximized to true for all windows
