@@ -276,7 +276,7 @@ spawn-at-startup "libinput-gestures-setup" "restart"
 
 // spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
-spawn-at-startup "/home/vijay/.config/scripts/battery-notify.sh"
+spawn-at-startup "systemd-cat" "-t" "battery-notify" "--" "/home/vijay/.config/scripts/battery-notify.sh"
 
 spawn-at-startup "wl-clip-persist" "--clipboard" "both"
 
