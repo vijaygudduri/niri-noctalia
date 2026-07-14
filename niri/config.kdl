@@ -417,7 +417,7 @@ window-rule {
     geometry-corner-radius 8 8 0 0
     clip-to-geometry true
     open-maximized true     // Set open-maximized to true for all windows
-    // draw-border-with-background false
+    draw-border-with-background false
 }
 
 debug {
@@ -695,11 +695,11 @@ binds {
 
     // The pointer will be hidden by default
     // (you can still show it by pressing P).
-    Mod+Print { screenshot show-pointer=false; }
+    Mod+Insert { screenshot show-pointer=false; }
 
     // The pointer will be hidden on the screenshot.
-    Mod+Shift+Print { screenshot-screen show-pointer=false; }
-    Mod+Alt+Print { screenshot-window; }
+    Mod+Shift+Insert { screenshot-screen show-pointer=false; }
+    Mod+Alt+Insert { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
