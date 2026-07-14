@@ -36,7 +36,7 @@
       "keyColor": "yellow",
       "shell": "/bin/sh",
       "lazy": false,
-      "text": "ver=$(/usr/bin/qs -c noctalia-shell ipc call state all | jq -r .state.changelogState.lastSeenVersion | sed 's/^v//'); echo \"Noctalia-shell $ver\""
+      "text": "noctalia -v"
     },
     {
       "type": "packages",
