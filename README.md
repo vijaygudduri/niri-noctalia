@@ -9,7 +9,7 @@
 2.  **Install necessaries**
 
       ```bash      
-      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look gnome-keyring wl-clipboard wl-clip-persist gnome-calculator gnome-text-editor gnome-clocks blueman nautilus swappy evince brightnessctl playerctl wlsunset xdg-desktop-portal-gnome xwayland-satellite python-dbus-next jq xorg-xrdb just gvfs-mtp
+      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look gnome-keyring wl-clipboard wl-clip-persist gnome-calculator gnome-text-editor gnome-clocks blueman nautilus swappy evince brightnessctl playerctl wlsunset xdg-desktop-portal-gnome xwayland-satellite jq xorg-xrdb just gvfs-mtp
       ```
 
       ```bash
@@ -35,7 +35,7 @@
 7.  **Execute the scripts**
 
       ```bash
-      chmod +x ~/.config/scripts/*
+      chmod +x ~/.config/scripts/*.{sh,py}
       ```
 
 9.  **Configure libinput-gestures for touchpad gestures**
@@ -52,7 +52,7 @@
       mkdir -p ~/.icons && tar -xJf ~/Downloads/candy-icons.tar.xz -C ~/.icons
       ```
 
-8.  **To apply sugar-candy theme on sddm, run below commands**
+8.  **To apply theme on sddm, run below commands**
 
       ```bash
       sudo mkdir -p /etc/sddm.conf.d ; sudo touch /etc/sddm.conf.d/sddm.conf
