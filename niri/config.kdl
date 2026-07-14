@@ -259,7 +259,7 @@ layout {
     struts {
         // left 64
         // right 64
-        top -2
+        // top -2
         // bottom 64
     }
 }
@@ -269,15 +269,14 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-spawn-at-startup "qs" "-c" "noctalia-shell"
+
+spawn-at-startup "systemd-cat" "-t" "noctalia" "--" "noctalia"
 
 spawn-at-startup "libinput-gestures-setup" "restart"
 
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+// spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
-// spawn-at-startup "/home/vijay/.config/scripts/battery-notify.py"
-
-spawn-at-startup "/home/vijay/.config/scripts/usb-notify.py"
+spawn-at-startup "/home/vijay/.config/scripts/battery-notify.sh"
 
 spawn-at-startup "wl-clip-persist" "--clipboard" "both"
 
@@ -423,12 +422,6 @@ window-rule {
     default-window-height { proportion 0.50; }
 }
 
-window-rule {
-    match app-id="dev.noctalia.noctalia-qs" title="Noctalia"
-    open-floating true
-    default-column-width { proportion 0.50; }
-    default-window-height { proportion 0.50; }
-}
 
 // binds
 
@@ -715,7 +708,7 @@ binds {
 
     Mod+C repeat=false { spawn "code"; }
     Mod+E repeat=false { spawn "nautilus"; }
-    Mod+X repeat=false { spawn "~/.config/scripts/smooth-launch.sh" "google-chrome-stable"; }
+    Mod+X repeat=false { spawn "google-chrome-stable"; }
     // Mod+W { spawn "~/.config/scripts/smooth-launch.sh" "net.waterfox.waterfox"; }
     Mod+W repeat=false { spawn "net.waterfox.waterfox"; }
 }
