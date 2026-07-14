@@ -398,12 +398,26 @@ window-rule {
     // block-out-from "screencast"
 }
 
+blur {
+    on
+    passes 4
+    offset 4
+    noise 0.02
+    saturation 1.5
+}
+
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
+    background-effect {
+    blur true
+    xray false
+    }
+    opacity 0.90
     geometry-corner-radius 8 8 0 0
     clip-to-geometry true
     open-maximized true     // Set open-maximized to true for all windows
+    // draw-border-with-background false
 }
 
 debug {
@@ -420,6 +434,19 @@ window-rule {
     open-floating true
     default-column-width { proportion 0.40; }
     default-window-height { proportion 0.50; }
+}
+
+/*
+  Noctalia
+  Disable xray on all our surfaces so it looks more realistic.
+  Noctalia publishes blur regions automatically when ext-background-effects is available.
+*/
+layer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+    blur true
+  }
 }
 
 
