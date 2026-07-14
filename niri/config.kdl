@@ -708,11 +708,11 @@ binds {
 
     // The pointer will be hidden by default
     // (you can still show it by pressing P).
-    Print { screenshot show-pointer=false; }
+    Mod+Print { screenshot show-pointer=false; }
 
     // The pointer will be hidden on the screenshot.
-    Ctrl+Print { screenshot-screen show-pointer=false; }
-    Alt+Print { screenshot-window; }
+    Mod+Shift+Print { screenshot-screen show-pointer=false; }
+    Mod+Alt+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
