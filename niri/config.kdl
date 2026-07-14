@@ -318,7 +318,7 @@ animations {
 }
 
 switch-events {
-    lid-close { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; } 
+    lid-close { spawn "noctalia" "msg" "session" "lock"; } 
 }
 
 cursor {
