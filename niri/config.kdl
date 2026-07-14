@@ -411,7 +411,7 @@ blur {
 window-rule {
     background-effect {
     blur true
-    xray false
+    // xray false
     }
     opacity 0.90
     geometry-corner-radius 8 8 0 0
