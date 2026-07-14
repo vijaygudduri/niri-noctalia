@@ -8,15 +8,33 @@ fi
 
 alias top='clear && command top'
 
-waterone() {
-    net.waterfox.waterfox -P "profile-2" --no-remote "$@" &>/dev/null &
+foxking() {
+    # 1. If none of the installation methods exist, fail immediately
+    if ! command -v waterfox &>/dev/null && \
+       ! command -v net.waterfox.waterfox &>/dev/null && \
+       ! flatpak info net.waterfox.waterfox &>/dev/null; then
+        echo "Error: Waterfox is not installed." >&2
+        return 1
+    fi
+
+    # 2. Your exact logic chain (runs in background since we know one will match)
+    if command -v waterfox &>/dev/null; then
+        waterfox -P "profile-2" --no-remote "$@"
+    elif command -v net.waterfox.waterfox &>/dev/null; then
+        net.waterfox.waterfox -P "profile-2" --no-remote "$@"
+    else
+        flatpak run net.waterfox.waterfox -P "profile-2" --no-remote "$@"
+    fi &>/dev/null &
+
     disown
     niri msg action do-screen-transition --delay-ms 3000
+    
+    # 3. Cleanly close the terminal window
     if [[ "$TERM" == "xterm-kitty" ]]; then
-        exec kitty @ close-window
+        kitty @ close-window
     else
         exit
     fi
 }
 
-alias waterone=' waterone'
+alias foxking=' foxking'
