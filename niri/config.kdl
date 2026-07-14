@@ -398,6 +398,7 @@ window-rule {
     // block-out-from "screencast"
 }
 
+// blur global settings
 blur {
     on
     passes 4
@@ -413,7 +414,7 @@ window-rule {
     blur true
     // xray false
     }
-    opacity 0.90
+    opacity 0.85
     geometry-corner-radius 8 8 0 0
     clip-to-geometry true
     open-maximized true     // Set open-maximized to true for all windows
@@ -434,6 +435,28 @@ window-rule {
     open-floating true
     default-column-width { proportion 0.40; }
     default-window-height { proportion 0.50; }
+}
+
+/*
+  Noctalia
+  Disable xray on all our surfaces so it looks more realistic.
+  Noctalia publishes blur regions automatically when ext-background-effects is available.
+*/
+layer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+    // blur false
+  }
+}
+
+//blur nwg-drawer
+layer-rule {
+    match namespace="^nwg-drawer$"
+    background-effect {
+        blur true
+        xray false
+    }
 }
 
 
