@@ -401,8 +401,8 @@ window-rule {
 // blur global settings
 blur {
     on
-    passes 4
-    offset 4
+    passes 3
+    offset 3
     noise 0.02
     saturation 1.5
 }
@@ -459,6 +459,14 @@ layer-rule {
     }
 }
 
+// gmeet pip fix in chrome
+window-rule {
+    match app-id="Google-chrome" title="^Meet – "
+    open-floating true
+    default-column-width { fixed 400; }
+    default-window-height { fixed 300; }
+    default-floating-position x=20 y=20 relative-to="bottom-right"
+}
 
 // binds
 
