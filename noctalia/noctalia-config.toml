@@ -1,0 +1,230 @@
+[bar.default]
+background_opacity = 0.64999998547136784
+capsule = true
+capsule_fill = "#1E1F27"
+center = [ "battery", "date", "clock" ]
+end = [ "group:g1", "network", "group:g2", "notifications" ]
+margin_edge = 0
+margin_ends = 20
+scale = 1.1000000000000001
+start = [ "privacy", "volume", "brightness", "taskbar", "tray" ]
+thickness = 39
+
+    [[bar.default.capsule_group]]
+    fill = "#1E1F27"
+    id = "g1"
+    members = [ "network_rx", "network_tx" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    fill = "#1E1F27"
+    id = "g2"
+    members = [ "bluetooth", "battery_3" ]
+    opacity = 1.0
+    padding = 6.0
+
+[battery]
+warning_threshold = 0
+
+[calendar]
+enabled = true
+
+[control_center]
+width = 650
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+    [[control_center.shortcuts]]
+    type = "nightlight"
+
+    [[control_center.shortcuts]]
+    type = "notification"
+
+    [[control_center.shortcuts]]
+    type = "noctalia/screen_recorder:toggle"
+
+[desktop_widgets]
+enabled = false
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 5
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660
+
+[location]
+address = "Bayyaram, india"
+
+[lockscreen]
+fingerprint = false
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-0000000000000001" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 600.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 32.0
+        center_password_text = true
+        input_opacity = 0.10000000000000001
+        input_radius = 32.0
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 144.0
+    box_width = 224.0
+    cx = 960.0
+    cy = 408.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        center_text = false
+        shadow = true
+
+[notification]
+layer = "overlay"
+
+[osd]
+position = "top_center"
+
+    [osd.kinds]
+    media = false
+
+[plugin_settings."noctalia/screen_recorder"]
+video_source = "focused"
+
+[plugins]
+enabled = [ "noctalia/screen_recorder" ]
+
+[shell]
+avatar_path = "/home/vijay/Pictures/Wallpapers/Avtars/wallhaven-jevz8y_1600x1200.png"
+polkit_agent = true
+settings_show_advanced = true
+
+    [shell.panel]
+    control_center_placement = "attached"
+    open_near_click_control_center = true
+    transparency_mode = "soft"
+
+[theme]
+builtin = "Tokyo-Night"
+community_palette = "Oxocarbon"
+custom_palette = "Ayu"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
+
+[wallpaper]
+directory = "/home/vijay/Pictures/Wallpapers"
+transition_on_startup = true
+
+    [wallpaper.automation]
+    enabled = true
+    interval_seconds = 18000
+    recursive = false
+
+    [wallpaper.default]
+    path = "/home/vijay/Pictures/Wallpapers/wallhaven-28kdom_1920x1200.png"
+
+    [wallpaper.last]
+    path = "/home/vijay/Pictures/Wallpapers/wallhaven-28kdom_1920x1200.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/vijay/Pictures/Wallpapers/wallhaven-28kdom_1920x1200.png"
+
+[widget.battery]
+color = "#8CE2FF"
+display_mode = "graphic"
+
+[widget.battery_3]
+color = "#8EC1FF"
+device = "/org/freedesktop/UPower/devices/headset_dev_40_72_18_02_5D_EC"
+scale = 0.90000000000000002
+type = "battery"
+
+[widget.bluetooth]
+color = "#8EC1FF"
+scale = 1.1000000000000001
+
+[widget.brightness]
+color = "#DBFD87"
+scroll_step = 1
+
+[widget.clock]
+color = "#FFFB8C"
+
+[widget.control-center]
+color = "#8FFE97"
+
+[widget.date]
+color = "#8CFF97"
+
+[widget.network]
+color = "#8EFFD7"
+
+[widget.network_rx]
+color = "#DDFFB1"
+display = "text"
+
+[widget.network_tx]
+color = "#DDFFB1"
+display = "text"
+
+[widget.notifications]
+color = "#EEFF33"
+scale = 1.1000000000000001
+
+[widget.privacy]
+hide_inactive = true
+
+[widget.taskbar]
+color = "#59F7EC"
+
+[widget.tray]
+hidden = [ "Blueman" ]
+
+[widget.volume]
+color = "#87FDE0"
