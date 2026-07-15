@@ -1,11 +1,11 @@
 [bar.default]
-background_opacity = 0.64999998547136784
+background_opacity = 0.69999998435378075
 capsule = true
 capsule_fill = "#1E1F27"
 center = [ "battery", "date", "clock" ]
 end = [ "group:g1", "network", "group:g2", "notifications" ]
 margin_edge = 0
-margin_ends = 20
+margin_ends = 0
 scale = 1.1000000000000001
 start = [ "privacy", "volume", "brightness", "taskbar", "tray" ]
 thickness = 39
