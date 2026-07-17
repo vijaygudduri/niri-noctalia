@@ -487,7 +487,6 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty" "--single-instance"; }
-    Mod+D hotkey-overlay-title="Run an Application: nwg-drawer" { spawn "nwg-drawer"; }
     Mod+L hotkey-overlay-title="Lock the Screen" { spawn-sh "playerctl -a pause 2>/dev/null; noctalia msg session lock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -752,8 +751,9 @@ binds {
     // Mod+Shift+P { power-off-monitors; }
 
     Mod+C repeat=false { spawn "code"; }
+    Mod+D repeat=false { spawn "nwg-drawer"; }
     Mod+E repeat=false { spawn "nautilus"; }
-    Mod+X repeat=false { spawn "google-chrome-stable"; }
-    // Mod+W { spawn "~/.config/scripts/smooth-launch.sh" "net.waterfox.waterfox"; }
-    Mod+W repeat=false { spawn "net.waterfox.waterfox"; }
+    // Mod+X repeat=false { spawn "google-chrome-stable"; }
+    Mod+X repeat=false { spawn-sh "niri msg action do-screen-transition --delay-ms 1300; google-chrome-stable"; }
+    // Mod+W repeat=false { spawn "net.waterfox.waterfox"; }
 }
