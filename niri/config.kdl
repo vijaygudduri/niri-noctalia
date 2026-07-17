@@ -418,6 +418,15 @@ layer-rule {
     }
 }
 
+// Make floating windows use the regular blur (if enabled),
+// while tiled windows keep using the efficient xray blur.
+window-rule {
+    match is-floating=true
+    background-effect {
+        xray false
+    }
+}
+
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
