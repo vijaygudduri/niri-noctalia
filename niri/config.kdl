@@ -407,6 +407,17 @@ blur {
     saturation 1.5
 }
 
+// Make top and overlay layers use the regular blur (if enabled),
+// while bottom and background layers keep using the efficient xray blur.
+layer-rule {
+    match layer="top"
+    match layer="overlay"
+
+    background-effect {
+        xray false
+    }
+}
+
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
@@ -437,25 +448,11 @@ window-rule {
     default-window-height { proportion 0.50; }
 }
 
-/*
-  Noctalia
-  Disable xray on all our surfaces so it looks more realistic.
-  Noctalia publishes blur regions automatically when ext-background-effects is available.
-*/
-layer-rule {
-  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
-  background-effect {
-    xray false
-    // blur false
-  }
-}
-
 //blur nwg-drawer
 layer-rule {
     match namespace="^nwg-drawer$"
     background-effect {
         blur true
-        xray false
     }
 }
 
@@ -751,7 +748,7 @@ binds {
     // Mod+Shift+P { power-off-monitors; }
 
     Mod+C repeat=false { spawn "code"; }
-    Mod+D repeat=false { spawn "nwg-drawer"; }
+    Mod+D repeat=false { spawn "nwg-drawer" "-ovl"; }
     Mod+E repeat=false { spawn "nautilus"; }
     // Mod+X repeat=false { spawn "google-chrome-stable"; }
     Mod+X repeat=false { spawn-sh "niri msg action do-screen-transition --delay-ms 1300; google-chrome-stable"; }
