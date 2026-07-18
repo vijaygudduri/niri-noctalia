@@ -9,7 +9,7 @@
 2.  **Install necessaries**
 
       ```bash      
-      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look gnome-keyring wl-clipboard wl-clip-persist gnome-calculator gnome-text-editor gnome-clocks blueman nautilus swappy evince brightnessctl playerctl wlsunset xdg-desktop-portal-gnome xwayland-satellite jq xorg-xrdb just gvfs-mtp gpu-screen-recorder smplayer
+      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look gnome-keyring wl-clipboard wl-clip-persist gnome-calculator gnome-text-editor gnome-clocks blueman nautilus swappy evince brightnessctl playerctl xdg-desktop-portal-gnome xwayland-satellite jq xorg-xrdb just gvfs-mtp gpu-screen-recorder smplayer
       ```
 
       ```bash
