@@ -83,7 +83,16 @@
       
       nmcli con up 'Interstellar'
       ```
-12. **Change the shell to zsh**
+
+12.  **Make image viewer app default to open all image types**
+
+      ```bash
+      for mime in jpeg png webp gif bmp tiff svg+xml x-icon heif heic; do
+          xdg-mime default org.gnome.Loupe.desktop image/$mime
+      done
+      ```  
+
+12.  **Change the shell to zsh**
 
       ```bash
       chsh -s $(which zsh)
