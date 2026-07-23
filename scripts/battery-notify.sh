@@ -101,45 +101,34 @@ check_state() {
         LAST_AC="$ONLINE"
     fi
 
-    # Low battery thresholds — directional check (<=) instead of exact match,
-    # so a fast drain that skips past a clean multiple (e.g. 22% -> 18%)
-    # still triggers the alert instead of silently missing it.
+    # Low battery thresholds — exact match, per explicit request: fires only
+    # when capacity lands precisely on a listed value. Tradeoff: if a fast
+    # drain skips past a threshold in one reading (e.g. 27% -> 24%, skipping
+    # 25%), that specific notification will not fire.
     if [[ "$ONLINE" == "0" ]]; then
-        local target=""
-        # Scan all thresholds — don't stop at the first match. Since the
-        # array is descending (20 15 10 5), the LAST match encountered here
-        # is the smallest (most severe) one the battery has actually reached,
-        # which is what matters if a fast drain skipped past 20%/15% between
-        # two udev events (e.g. 22% -> 13% in one jump).
         for t in "${THRESHOLDS_LOW[@]}"; do
-            [[ "$CAPACITY" -le "$t" ]] && target="$t"
-        done
-        if [[ -n "$target" ]]; then
-            if [[ -z "$LAST_ALERTED_LOW" || "$LAST_ALERTED_LOW" -gt "$target" ]]; then
+            if [[ "$CAPACITY" -eq "$t" && "$LAST_ALERTED_LOW" != "$t" ]]; then
                 urgency="normal"
-                [[ "$target" -le 10 ]] && urgency="critical"
+                [[ "$t" -le 10 ]] && urgency="critical"
                 ICON=$(battery_icon "$CAPACITY" "0")
-                echo "Low battery threshold hit: ${target}% (actual ${CAPACITY}%)"
+                echo "Low battery threshold hit: ${t}%"
                 notify-send -h boolean:transient:true -a "$APP_NAME" -u "$urgency" -i "$ICON" "Battery Low" "Battery at ${CAPACITY}%, please connect the charger"
-                LAST_ALERTED_LOW="$target"
+                LAST_ALERTED_LOW="$t"
+                break
             fi
-        fi
+        done
     else
         LAST_ALERTED_LOW=""   # reset once charging, so it can fire again next discharge
     fi
 
-    # High/charged thresholds — same directional logic, inverted (>=).
-    # THRESHOLDS_HIGH is sorted descending, so this loop reads identically
-    # to the low-threshold one above: first match wins, then break.
+    # High/charged thresholds — same exact-match logic, for consistency.
     if [[ "$ONLINE" == "1" ]]; then
         for t in "${THRESHOLDS_HIGH[@]}"; do
-            if [[ "$CAPACITY" -ge "$t" ]]; then
-                if [[ -z "$LAST_ALERTED_HIGH" || "$LAST_ALERTED_HIGH" -lt "$t" ]]; then
-                    ICON=$(battery_icon "$CAPACITY" "1")
-                    echo "High battery threshold hit: ${t}% (actual ${CAPACITY}%)"
-                    notify-send -h boolean:transient:true -a "$APP_NAME" -u normal -i "$ICON" "Battery Charged" "Battery at ${CAPACITY}%, please disconnect the charger"
-                    LAST_ALERTED_HIGH="$t"
-                fi
+            if [[ "$CAPACITY" -eq "$t" && "$LAST_ALERTED_HIGH" != "$t" ]]; then
+                ICON=$(battery_icon "$CAPACITY" "1")
+                echo "High battery threshold hit: ${t}%"
+                notify-send -h boolean:transient:true -a "$APP_NAME" -u normal -i "$ICON" "Battery Charged" "Battery at ${CAPACITY}%, please disconnect the charger"
+                LAST_ALERTED_HIGH="$t"
                 break
             fi
         done
