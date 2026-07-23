@@ -452,7 +452,7 @@ debug {
 window-rule {
     match app-id="org.pulseaudio.pavucontrol"
     match app-id="blueman-manager"
-    match app-id="org.gnome.Calculator"
+    match app-id="qalculate-gtk"
     match app-id="nm-connection-editor"
     open-floating true
     default-column-width { proportion 0.40; }
