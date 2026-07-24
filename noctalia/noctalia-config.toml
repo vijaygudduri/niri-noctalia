@@ -208,10 +208,14 @@ color = "#8EFFD7"
 [widget.network_rx]
 color = "#DDFFB1"
 display = "text"
+glyph = "arrow-down-to-arc"
+network_speed_compact = true
 
 [widget.network_tx]
 color = "#DDFFB1"
 display = "text"
+glyph = "arrow-up-to-arc"
+network_speed_compact = true
 
 [widget.notifications]
 color = "#EEFF33"
