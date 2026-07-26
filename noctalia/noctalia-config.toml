@@ -90,8 +90,8 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 70.0
-    box_width = 400.0
+    box_height = 87.0
+    box_width = 384.0
     cx = 960.0
     cy = 600.0
     output = "eDP-1"
@@ -100,15 +100,19 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
         background_color = "surface_variant"
-        background_opacity = 0.88
+        background_opacity = 0.59999999999999998
         background_radius = 32.0
         center_password_text = true
-        input_opacity = 0.10000000000000001
+        input_opacity = 0.59999999999999998
         input_radius = 32.0
+        layout = "compact"
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
+        show_media = true
         show_password_hint = false
+        show_session_buttons = true
+        show_weather = false
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 144.0
