@@ -170,6 +170,10 @@ widget_order = [
         background_radius = 32
         clock_style = "analog"
 
+[nightlight]
+enabled = true
+temperature_night = 5500
+
 [notification]
 layer = "overlay"
 
