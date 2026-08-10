@@ -317,9 +317,9 @@ animations {
     // slowdown 3.0
 }
 
-switch-events {
-    lid-close { spawn "noctalia" "msg" "session" "lock"; } 
-}
+// switch-events {
+//     lid-close { spawn "noctalia" "msg" "session" "lock"; } 
+// }
 
 cursor {
     xcursor-theme "Bibata-Modern-Ice"
@@ -452,8 +452,8 @@ debug {
 window-rule {
     match app-id="org.pulseaudio.pavucontrol"
     match app-id="blueman-manager"
-    match app-id="qalculate-gtk"
     match app-id="nm-connection-editor"
+    match app-id="qalculate-gtk"
     open-floating true
     default-column-width { proportion 0.40; }
     default-window-height { proportion 0.50; }
@@ -475,6 +475,12 @@ window-rule {
     default-window-height { fixed 300; }
     default-floating-position x=20 y=20 relative-to="bottom-right"
 }
+
+window-rule {
+    match app-id=r"^dev\.noctalia\.Noctalia$"
+    scroll-factor 6
+}
+
 
 // binds
 
@@ -763,5 +769,6 @@ binds {
     Mod+E repeat=false { spawn "nautilus"; }
     // Mod+X repeat=false { spawn "google-chrome-stable"; }
     Mod+X repeat=false { spawn-sh "niri msg action do-screen-transition --delay-ms 1300; google-chrome-stable"; }
-    // Mod+W repeat=false { spawn "net.waterfox.waterfox"; }
+    Mod+W repeat=false { spawn "net.waterfox.waterfox"; }
+    Mod+P repeat=false { spawn "playerctl" "pause"; }
 }
