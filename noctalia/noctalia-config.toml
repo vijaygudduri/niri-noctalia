@@ -280,7 +280,13 @@ scale = 1.1000000000000001
 hide_inactive = true
 
 [widget.taskbar]
+active_indicator_color = "#8BFE89"
 color = "#59F7EC"
+hide_empty_workspaces = true
+item_spacing = 8
+minimal = true
+show_workspace_label = false
+workspace_group_capsule = false
 
 [widget.tray]
 hidden = [ "Blueman" ]
