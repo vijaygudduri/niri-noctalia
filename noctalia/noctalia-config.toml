@@ -37,23 +37,23 @@ warning_threshold = 0
 [calendar]
 enabled = true
 
-    [[control_center.shortcuts]]
-    type = "wifi"
+[[control_center.shortcuts]]
+type = "wifi"
 
-    [[control_center.shortcuts]]
-    type = "bluetooth"
+[[control_center.shortcuts]]
+type = "bluetooth"
 
-    [[control_center.shortcuts]]
-    type = "caffeine"
+[[control_center.shortcuts]]
+type = "caffeine"
 
-    [[control_center.shortcuts]]
-    type = "nightlight"
+[[control_center.shortcuts]]
+type = "nightlight"
 
-    [[control_center.shortcuts]]
-    type = "notification"
+[[control_center.shortcuts]]
+type = "notification"
 
-    [[control_center.shortcuts]]
-    type = "noctalia/screen_recorder:toggle"
+[[control_center.shortcuts]]
+type = "noctalia/screen_recorder:toggle"
 
 [desktop_widgets]
 enabled = false
