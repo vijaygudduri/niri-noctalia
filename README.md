@@ -87,9 +87,7 @@
 12.  **Make image viewer app default to open all image types**
 
       ```bash
-      for mime in jpeg png webp gif bmp tiff svg+xml x-icon heif heic; do
-          xdg-mime default org.gnome.Loupe.desktop image/$mime
-      done
+      xdg-mime default org.gnome.Loupe.desktop image/jpeg image/png image/webp image/gif image/bmp image/tiff image/svg+xml image/x-icon image/heif image/heic
       ```  
 
 12.  **Change the shell to zsh**
