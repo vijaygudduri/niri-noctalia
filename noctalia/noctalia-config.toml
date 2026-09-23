@@ -265,12 +265,14 @@ color = "#DDFFB1"
 display = "text"
 glyph = "arrow-down-to-arc"
 network_speed_compact = true
+visualization = "none"
 
 [widget.network_tx]
 color = "#DDFFB1"
 display = "text"
 glyph = "arrow-up-to-arc"
 network_speed_compact = true
+visualization = "none"
 
 [widget.notifications]
 color = "#EEFF33"
