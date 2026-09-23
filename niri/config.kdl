@@ -270,7 +270,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 
-spawn-at-startup "systemd-cat" "-t" "noctalia" "--" "noctalia"
+spawn-at-startup "noctalia"
 
 spawn-at-startup "libinput-gestures-setup" "restart"
 
