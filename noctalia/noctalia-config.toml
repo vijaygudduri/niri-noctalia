@@ -90,7 +90,8 @@ widget_order = [
     "lockscreen-login-box@eDP-1",
     "lockscreen-widget-0000000000000001",
     "lockscreen-widget-0000000000000002",
-    "lockscreen-widget-0000000000000003"
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-widget-0000000000000004"
 ]
 
     [lockscreen_widgets.grid]
@@ -99,18 +100,20 @@ widget_order = [
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 103.0
+    box_height = 70.0
     box_width = 400.0
     cx = 960.0
     cy = 600.0
     output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
         background_color = "surface_variant"
-        background_opacity = 0.65000000000000002
-        background_radius = 32.0
+        background_opacity = 0.59999999999999998
+        background_radius = 25.0
         center_password_text = true
         input_opacity = 0.5
         input_radius = 32.0
@@ -120,14 +123,17 @@ widget_order = [
         show_login_button = true
         show_media = true
         show_session_buttons = true
-        show_weather = false
+        show_unlock_hint = false
+        show_weather = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-    box_height = 64.0
-    box_width = 192.0
+    box_height = 0.0
+    box_width = 0.0
     cx = 960.0
-    cy = 376.0
+    cy = 339.5
     output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "clock"
 
@@ -140,35 +146,60 @@ widget_order = [
         shadow = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
-    box_height = 48.0
-    box_width = 112.0
+    box_height = 176.0
+    box_width = 176.0
     cx = 960.0
-    cy = 1144.0
+    cy = 192.0
     output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
     rotation = 0.0
-    type = "button"
+    type = "clock"
 
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
         background = true
+        background_opacity = 0.75
+        background_padding = 5
+        clock_style = "analog"
         command = "systemctl suspend"
         glyph = "moon-stars"
         label = "Suspend"
         variant = "default"
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
-    box_height = 192.0
-    box_width = 240.0
+    box_height = 48.0
+    box_width = 96.0
     cx = 960.0
-    cy = 248.0
+    cy = 40.0
     output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
     rotation = 0.0
-    type = "clock"
+    type = "yocraft/battery-widget:widget"
 
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
-        background_opacity = 0.5
-        background_padding = 0
-        background_radius = 32
+        background_opacity = 0.59999999999999998
+        background_padding = 10
+        background_radius = 25
         clock_style = "analog"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 1080.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = true
+        command = "systemctl suspend"
+        glyph = "moon-stars"
+        label = "Suspend"
+        variant = "default"
 
 [nightlight]
 enabled = true
