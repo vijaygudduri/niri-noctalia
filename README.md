@@ -29,7 +29,7 @@
       ```
       
       ```bash
-      cp -r Wallpapers ~/Pictures/ && cp .zshrc_myconfigs ~ && cp -r fastfetch niri kitty nwg-drawer scripts chrome-flags.conf libinput-gestures.conf ~/.config/
+      install -Dm644 niri-portals.conf ~/.config/xdg-desktop-portal/niri-portals.conf && cp -r Wallpapers ~/Pictures/ && cp .zshrc_myconfigs ~ && cp -r fastfetch niri kitty nwg-drawer scripts chrome-flags.conf libinput-gestures.conf ~/.config/
       ```
 
 7.  **Execute the scripts**
