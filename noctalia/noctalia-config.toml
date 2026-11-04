@@ -318,7 +318,7 @@ show_tooltip = false
     scroll_up = "brightness-up 1%"
 
 [widget.clock]
-color = "#E991FF"
+color = "#87FDE0"
 
 [widget.date]
 color = "#8CFF97"
@@ -363,5 +363,5 @@ workspace_group_capsule = false
 hidden = [ "Blueman" ]
 
 [widget.volume]
-color = "#87FDE0"
+color = "#E991FF"
 show_tooltip = false
