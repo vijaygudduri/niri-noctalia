@@ -269,7 +269,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-
+// spawn-at-startup "systemd-cat" "-t" "noctalia" "--" "noctalia"
 spawn-at-startup "noctalia"
 
 spawn-at-startup "libinput-gestures-setup" "restart"
@@ -456,6 +456,13 @@ window-rule {
     match app-id="qalculate-gtk"
     open-floating true
     default-column-width { proportion 0.40; }
+    default-window-height { proportion 0.50; }
+}
+
+window-rule {
+    match app-id="xdg-desktop-portal-gtk"
+    open-floating true
+    default-column-width { proportion 0.50; }
     default-window-height { proportion 0.50; }
 }
 
