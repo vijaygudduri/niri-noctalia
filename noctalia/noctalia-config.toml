@@ -2,12 +2,12 @@
 background_opacity = 0.79999998211860657
 capsule = true
 capsule_fill = "#1E1F27"
-center = [ "battery", "date", "clock" ]
+center = [ "group:g3", "date", "clock" ]
 end = [ "group:g1", "network", "group:g2", "notifications" ]
 margin_edge = 0
 margin_ends = 0
 scale = 1.1000000000000001
-start = [ "privacy", "volume", "brightness", "taskbar", "tray" ]
+start = [ "privacy", "volume", "brightness", "launcher", "taskbar", "tray", "bar" ]
 thickness = 39
 
     [bar.default.dead_zone.actions]
@@ -16,6 +16,9 @@ thickness = 39
     right = "panel-toggle control-center monitor"
 
     [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
     enabled = true
     fill = "#1E1F27"
     id = "g1"
@@ -24,6 +27,9 @@ thickness = 39
     padding = 8.0
 
     [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
     enabled = true
     fill = "#1E1F27"
     id = "g2"
@@ -31,8 +37,22 @@ thickness = 39
     opacity = 1.0
     padding = 6.0
 
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "#1E1F27"
+    id = "g3"
+    members = [ "battery_4", "battery_5" ]
+    opacity = 1.0
+    padding = 6.0
+
 [battery]
-warning_threshold = 0
+warning_threshold = 20
+
+[bluetooth]
+connect_when_enabled = true
 
 [calendar]
 enabled = true
@@ -111,7 +131,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.59999999999999998
         background_radius = 25.0
         center_password_text = true
@@ -218,7 +238,7 @@ position = "top_center"
 video_source = "focused"
 
 [plugins]
-enabled = [ "noctalia/screen_recorder" ]
+enabled = [ "noctalia/screen_recorder", "yocraft/battery-widget" ]
 
 [shell]
 avatar_path = "/home/vijay/Pictures/Wallpapers/Avtars/wallhaven-jevz8y_1600x1200.png"
@@ -228,12 +248,17 @@ settings_show_advanced = true
 
     [shell.launcher]
     app_grid = true
+    categories = false
+    sort_by_usage = false
 
     [shell.panel]
     control_center_placement = "attached"
     open_near_click_control_center = true
     open_near_click_launcher = true
     transparency_mode = "soft"
+
+    [shell.screenshot]
+    remember_last_region = true
 
 [theme]
 builtin = "Tokyo-Night"
@@ -253,13 +278,13 @@ transition_on_startup = true
     recursive = false
 
     [wallpaper.default]
-    path = "/home/vijay/Pictures/Wallpapers/wallhaven-28kdom_1920x1200.png"
+    path = "/home/vijay/Pictures/Wallpapers/wallhaven-9oxjvd_1920x1200.png"
 
     [wallpaper.last]
-    path = "/home/vijay/Pictures/Wallpapers/wallhaven-28kdom_1920x1200.png"
+    path = "/home/vijay/Pictures/Wallpapers/wallhaven-9oxjvd_1920x1200.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/vijay/Pictures/Wallpapers/wallhaven-28kdom_1920x1200.png"
+    path = "/home/vijay/Pictures/Wallpapers/wallhaven-9oxjvd_1920x1200.png"
 
 [widget.battery]
 color = "#8CE2FF"
@@ -269,6 +294,17 @@ display_mode = "graphic"
 color = "#8EC1FF"
 device = "/org/freedesktop/UPower/devices/headset_dev_40_72_18_02_5D_EC"
 scale = 0.90000000000000002
+type = "battery"
+
+[widget.battery_4]
+color = "#7EFFF5"
+display_mode = "graphic"
+show_label = false
+type = "battery"
+
+[widget.battery_5]
+color = "#7EFFF5"
+display_mode = "none"
 type = "battery"
 
 [widget.bluetooth]
@@ -287,6 +323,9 @@ color = "#E991FF"
 
 [widget.date]
 color = "#8CFF97"
+
+[widget.launcher]
+glyph = "grain"
 
 [widget.network]
 color = "#8EFFD7"
