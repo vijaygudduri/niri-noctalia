@@ -318,7 +318,7 @@ show_tooltip = false
     scroll_up = "brightness-up 1%"
 
 [widget.clock]
-color = "#87FDE0"
+color = "#FD87B5"
 
 [widget.date]
 color = "#8CFF97"
