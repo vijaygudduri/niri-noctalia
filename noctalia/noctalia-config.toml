@@ -7,10 +7,12 @@ end = [ "group:g1", "network", "group:g2", "notifications" ]
 margin_edge = 0
 margin_ends = 0
 scale = 1.1000000000000001
-start = [ "privacy", "date", "clock", "launcher", "taskbar", "tray" ]
+start = [ "privacy", "date", "clock", "taskbar", "tray" ]
 thickness = 39
 
     [bar.default.dead_zone.actions]
+    left = "none"
+    middle = "none"
     right = "panel-toggle control-center home"
 
     [[bar.default.capsule_group]]
@@ -75,6 +77,19 @@ type = "noctalia/screen_recorder:toggle"
 
 [desktop_widgets]
 enabled = false
+
+[dock]
+background_opacity = 0.64999998547136784
+concave_edge_corners = false
+enabled = true
+icon_size = 38
+launcher_icon = "layout-grid"
+launcher_position = "start"
+layer = "overlay"
+pinned = [ "kitty", "google-chrome", "com.microsoft.VSCode", "org.gnome.Nautilus", "libreoffice-startcenter" ]
+reserve_space = false
+show_dots = true
+smart_auto_hide = true
 
 [idle]
 behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
@@ -247,7 +262,10 @@ settings_show_advanced = true
     [shell.launcher]
     app_grid = true
     categories = false
+    default_view = "pinned"
+    search_position = "top"
     sort_by_usage = false
+    width = 900
 
     [shell.panel]
     control_center_placement = "attached"
@@ -276,13 +294,13 @@ transition_on_startup = true
     recursive = false
 
     [wallpaper.default]
-    path = "/home/vijay/Pictures/Wallpapers/wallhaven-9oxjvd_1920x1200.png"
+    path = "/home/vijay/Pictures/Wallpapers/wallhaven-4v9oz8_1920x1200.png"
 
     [wallpaper.last]
-    path = "/home/vijay/Pictures/Wallpapers/wallhaven-9oxjvd_1920x1200.png"
+    path = "/home/vijay/Pictures/Wallpapers/wallhaven-4v9oz8_1920x1200.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/vijay/Pictures/Wallpapers/wallhaven-9oxjvd_1920x1200.png"
+    path = "/home/vijay/Pictures/Wallpapers/wallhaven-4v9oz8_1920x1200.png"
 
 [widget.battery]
 color = "#8CE2FF"
@@ -356,6 +374,7 @@ color = "#59F7EC"
 hide_empty_workspaces = true
 item_spacing = 8
 minimal = true
+show_tooltip = false
 show_workspace_label = false
 workspace_group_capsule = false
 
