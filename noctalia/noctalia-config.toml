@@ -263,7 +263,9 @@ settings_show_advanced = true
     [shell.launcher]
     app_grid = true
     categories = false
-    sort_by_usage = true
+    default_view = "all"
+    search_position = "top"
+    sort_by_usage = false
     width = 900
 
     [shell.panel]
