@@ -86,6 +86,7 @@ icon_size = 38
 launcher_icon = "layout-grid"
 launcher_position = "start"
 layer = "overlay"
+margin_edge = 5
 pinned = [ "kitty", "google-chrome", "com.microsoft.VSCode", "org.gnome.Nautilus", "libreoffice-startcenter" ]
 reserve_space = false
 show_dots = true
